@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: chat-app
+    env: node
+    buildCommand: |
+      cd client && yarn && npm run dev
+      cd ../server && yarn
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18.x
+      - key: PORT
+        value: 10000
